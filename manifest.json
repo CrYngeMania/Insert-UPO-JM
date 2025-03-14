@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Insert UPO",
+    "version": "1.0",
+    "description": "Automatically inserts UPO into the Business Unit section of every Quadient shipment.",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "tabs"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://smart.quadient.com/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    }
+}
